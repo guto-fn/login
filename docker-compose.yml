@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: my_postgres
+    restart: "no"
+    environment:
+      - POSTGRES_USER=guto-fn
+      - POSTGRES_PASSWORD=guto-fn-00@
+      - POSTGRES_DB=login_db
+    volumes:
+      - ./datas:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: my_pgadmin
+    restart: "no"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=gutofn@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=guto-fn-admin@
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
