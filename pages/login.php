@@ -14,7 +14,7 @@
 
         <h2>Login</h2>
 
-        <form action="#" method="post">
+        <form action="../php/login_user.php" method="post">
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Type your email" required>
